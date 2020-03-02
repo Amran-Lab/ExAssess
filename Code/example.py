@@ -1,20 +1,22 @@
 #!/usr/bin/env python3	
 
-	# <QUESTION 1>
-
-	# The most frequent task in this test is to find out which one of the given numbers differs from the others.
-	# Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
-
-	# <EXAMPLES>
-
-	# iq_test("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers are even
-
-	# iq_test("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
-
-	# <HINT>
     
 def example1(input):
-	return n
+	odd = []
+	even =[]
+	input = input.split(' ')
+	for i,el in enumerate(input):
+		el = int(el)
+		if el%2 ==0:
+			even.append(i)
+		else:
+			odd.append(i)
+	
+	if len(odd)==1:
+		return odd[0]+1
+	else: 
+		return even[0]+1
+	
 
 # <QUESTION 2>
 
@@ -23,7 +25,11 @@ def example1(input):
 # String will never be empty and you do not need to account for different data types.
 
 def example2(s):
-	return l
+	s = s.split()
+	
+	short = min(s, key=len)
+
+	return len(short)
 
 # <QUESTION 3>
 
@@ -34,4 +40,12 @@ def example2(s):
 # filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
 def example3(l):
+	nl =[]
+	for i, el in enumerate(l):
+		if isinstance(el,int) and el>=0:
+			nl.append(el)
+		else:
+			pass
 	return nl
+#print(example1("2 4 7 8 10"))
+print(example2("bitcoin take over the world maybe who knows perhaps"))
